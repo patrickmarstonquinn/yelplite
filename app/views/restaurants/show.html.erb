@@ -38,3 +38,96 @@
     </div>
   </div>
 </div>
+
+<!-- A Restaurant has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/reviews/<%= review.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_review/<%= review.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many restaurant_tags -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurant Tags
+      </li>
+
+      <% @restaurant.restaurant_tags.each do |restaurant_tag| %>
+        <li class="list-group-item">
+          <a href="/restaurant_tags/<%= restaurant_tag.id %>">
+            <%= restaurant_tag.restaurant_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/restaurant_tags/<%= restaurant_tag.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/restaurant_tags/<%= restaurant_tag.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_restaurant_tag/<%= restaurant_tag.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many tags -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Tags
+      </li>
+
+      <% @restaurant.tags.each do |tag| %>
+        <li class="list-group-item">
+          <a href="/tags/<%= tag.id %>">
+            <%= tag.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/tags/<%= tag.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/tags/<%= tag.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_tag/<%= tag.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
