@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>User #<%= @user.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Email</dt>
+      <dd><%= @user.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @user.password %></dd>
+
+      <dt>First name</dt>
+      <dd><%= @user.first_name %></dd>
+
+      <dt>Last initial</dt>
+      <dd><%= @user.last_initial %></dd>
+
+      <dt>Number of reviews</dt>
+      <dd><%= @user.number_of_reviews %></dd>
+
+      <dt>Average rating given</dt>
+      <dd><%= @user.average_rating_given %></dd>
+
+      <dt>Given reviews</dt>
+      <dd><%= @user.given_reviews %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/users" class="btn btn-primary">
+        Back
+      </a>
+    </div>
+  </div>
+</div>
